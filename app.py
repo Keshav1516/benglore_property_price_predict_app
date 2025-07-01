@@ -10,8 +10,11 @@ locations= json.load(open("column.json"))
 X= locations['data_columns']
 location_list= X[3:]
 
-def predict_price(location,sqft,bath,bhk):    
-    loc_index = np.where(X==location)[0]
+def predict_price(location, sqft, bath, bhk):
+    try:
+        loc_index = X.index(location.lower())  # Safe index lookup
+    except ValueError:
+        loc_index = -1
 
     x = np.zeros(len(X))
     x[0] = sqft
