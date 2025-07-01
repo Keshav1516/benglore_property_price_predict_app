@@ -7,11 +7,11 @@ import json
 
 model= pickle.load(open("benglore_home_prices_model.pickle","rb"))
 locations= json.load(open("column.json"))
-x= locations['data_columns']
-location_list= x[3:]
+X= locations['data_columns']
+location_list= X[3:]
 
 def predict_price(location,sqft,bath,bhk):    
-    loc_index = np.where(x==location)[0]
+    loc_index = np.where(X==location)[0]
 
     x = np.zeros(len(X))
     x[0] = sqft
