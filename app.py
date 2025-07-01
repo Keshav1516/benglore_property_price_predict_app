@@ -41,8 +41,8 @@ def __main__():
     sample= np.array(sample).reshape(1,-1)
     if st.button("Estimate Price"):
         
-        pre= predict_price(loc, sqft, bath, bhk)
-        pre= round(pred,2)
+        pred= predict_price(loc, sqft, bath, bhk)
+        pred= round(pred,2)
         output= "The estimated price of the property is" + str(pred) + "lakh"
         st.success(output)
         
