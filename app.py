@@ -4,8 +4,8 @@ import pickle
 import streamlit as st
 import json 
 
-model= pickle.load(open("C:/Users/keshav/OneDrive/Desktop/Benglore Property Price/benglore_home_prices_model.pickle","rb"))
-locations= json.load(open("C:/Users/keshav/OneDrive/Desktop/Benglore Property Price/column.json"))
+model= pickle.load(open("benglore_home_prices_model.pickle","rb"))
+locations= json.load(open("column.json"))
 x= locations['data_columns']
 location_list= x[3:]
 
@@ -24,7 +24,7 @@ def predict_price(location,sqft,bath,bhk):
 def __main__():
     st.title("Bengaluru House Price Prediction")
     st.write("")
-    st.image("C:/Users/keshav/OneDrive/Desktop/Benglore Property Price/House.jpeg", width=700)
+    st.image("House.jpeg", width=700)
     
     loc= st.selectbox("Enter the location", location_list)
     sqft= st.number_input("Enter the area (in sq.ft): ", min_value=100, max_value=12000)
