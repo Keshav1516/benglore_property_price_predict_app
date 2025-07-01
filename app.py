@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import pickle
 import streamlit as st
+import sklearn
 import json 
 
 model= pickle.load(open("benglore_home_prices_model.pickle","rb"))
